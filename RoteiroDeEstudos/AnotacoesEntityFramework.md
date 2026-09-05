@@ -42,4 +42,19 @@
     4. Criar o contrustor da classe que vai receber a configuração do banco de dados
     5. Criar a propriedade DbSet<> que vai representar a tabela
 
+```csharp
+using Microsoft.EntityFrameworkCore;
+using MODULOAPI.Entities;
 
+namespace MODULOAPI.Context
+{
+    public class AgendaContext : DbContext
+    {
+        public AgendaContext(DbContextOptions<AgendaContext> options) : base(options)
+        {
+
+        }
+        public DbSet<Contatos> Contatos { get; set; }
+    }
+}
+```
