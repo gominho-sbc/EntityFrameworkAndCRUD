@@ -58,3 +58,32 @@ namespace MODULOAPI.Context
     }
 }
 ```
+## Configurando a conexão
+
+1. Cadastrar a conexão com o banco no arquivo appsettings.Development.json. Na ConnectionString vai informações sobre o servidor, o nome do banco e o tipo de autenticação.
+
+```Json
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "ConnectionStrings": {
+    "ConexaoPadrao": "Server=localhost\\sqlexpress; Initial Catalog=Agenda; Integrated Security=True"
+  }
+}
+```
+2. Configurar o context passando a string de conexão.
+Na classe Program.cs adicionar o código abaixo
+Adiconar os usings
+```csharp
+using ModuloAPI.Context;
+using Microsoft.EntityFrameworkCore;
+```
+
+3. Abaixo de var builder no começo do código colocar a instrução abaixo.
+```csharp
+builder.Services.AddDbContext<AgendaContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ConexaoPadrao")));
+
