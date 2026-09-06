@@ -205,3 +205,52 @@ record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary);
        return Ok(contato);
    }
 ```
+
+## Criando o endpoint Update
+
+1. Na classe ContatoController.cs incluir o código abaixo
+
+```csharp
+    [HttpPut("{id}")]
+    public IActionResult Atualizar(int id, Contatos contato)
+    {
+        var contatoBanco = _context.Contatos.Find(id);
+
+        if (contatoBanco == null)
+        {
+            return NotFound();
+        }
+
+        contatoBanco.Nome = contato.Nome;
+        contatoBanco.Telefone = contato.Telefone;
+        contatoBanco.Ativo = contato.Ativo;
+
+        _context.Contatos.Update(contatoBanco);
+        _context.SaveChanges();
+
+        return Ok(contatoBanco);
+    }
+```
+
+## Criando o endpoint Delete
+
+1. Na classe ContatoController.cs incluir o código abaixo
+
+```csharp
+    [HttpDelete("{id}")]
+    public IActionResult Deletar(int id)
+    {
+        var contatoBanco = _context.Contatos.Find(id);
+
+        if (contatoBanco == null)
+        {
+            return NotFound();
+        }
+
+        _context.Contatos.Remove(contatoBanco);
+        _context.SaveChanges();
+
+        return NoContent();
+    }
+
+```
