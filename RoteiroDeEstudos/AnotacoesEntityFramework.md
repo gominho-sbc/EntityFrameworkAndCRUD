@@ -86,4 +86,20 @@ using Microsoft.EntityFrameworkCore;
 3. Abaixo de var builder no começo do código colocar a instrução abaixo.
 ```csharp
 builder.Services.AddDbContext<AgendaContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ConexaoPadrao")));
+```
+## Entendendo as migrations
 
+Migrations são mapeamentos que o EF faz para transformar as classes em tabelas. As classes que serão transformadas em tabelas no banco estão referenciadas na classe context através do DbSet, ou seja, toda tabela do banco tem que ter um DbSet.
+
+1. Garantir que o banco de dados esteja rodando.
+Abrir o Sql Server Configuration Management e ver se a instancia do SQL Server (SQLEXPRESS) está em execução.
+
+![Tela Sql Server Configuration](image-1.png)
+
+2. No terminal do vscode digitar o comando abaixo que vai criar a Migration mas ainda não vai aplicar no banco de dados.
+
+-> dotnet-ef migrations add CriacaoTabelaContato
+
+3. Ainda no terminal digitar o comando que vai aplicar a migration no banco.
+
+-> dotnet-ef database update
