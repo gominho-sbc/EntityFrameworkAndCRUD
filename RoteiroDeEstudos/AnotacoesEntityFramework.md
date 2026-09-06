@@ -103,3 +103,36 @@ Abrir o Sql Server Configuration Management e ver se a instancia do SQL Server (
 3. Ainda no terminal digitar o comando que vai aplicar a migration no banco.
 
 -> dotnet-ef database update
+
+## Criando a controller e o Endpoint de create
+
+1. Criar a pasta Controllers.
+2. Criar uma classe com o nome ContatoControler.cs com o código abaixo.
+    ```csharp
+    using Microsoft.AspNetCore.Mvc;
+    using MODULOAPI.Context;
+
+    namespace MODULOAPI.Controllers
+    {
+        [ApiController]
+        [Route("[controller]")]
+        public class ContatoController : ControllerBase
+        {
+            private readonly AgendaContext _context;
+
+            public ContatoController(AgendaContext context)
+            {
+                _context = context;
+            }
+
+            [HttpPost]
+            public IActionResult Create(ContatoController contato)
+            {
+                _context.Add(contato);
+                _context.SaveChanges();
+                return Ok(contato);
+            }
+
+        }
+    }
+    ```

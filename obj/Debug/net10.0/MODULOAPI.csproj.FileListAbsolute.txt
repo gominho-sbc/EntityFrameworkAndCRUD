@@ -164,3 +164,6 @@ F:\Cursos\01-Cursos-DIO\01-Randstad-BackEnd-com-dotNet-2026\06-Construindo-APIs-
 F:\Cursos\01-Cursos-DIO\01-Randstad-BackEnd-com-dotNet-2026\06-Construindo-APIs-com-dotNet-Csharp\02-Atividades\MODULOAPI\obj\Debug\net10.0\MODULOAPI.pdb
 F:\Cursos\01-Cursos-DIO\01-Randstad-BackEnd-com-dotNet-2026\06-Construindo-APIs-com-dotNet-Csharp\02-Atividades\MODULOAPI\obj\Debug\net10.0\MODULOAPI.genruntimeconfig.cache
 F:\Cursos\01-Cursos-DIO\01-Randstad-BackEnd-com-dotNet-2026\06-Construindo-APIs-com-dotNet-Csharp\02-Atividades\MODULOAPI\obj\Debug\net10.0\ref\MODULOAPI.dll
+F:\Cursos\01-Cursos-DIO\01-Randstad-BackEnd-com-dotNet-2026\06-Construindo-APIs-com-dotNet-Csharp\02-Atividades\MODULOAPI\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
+F:\Cursos\01-Cursos-DIO\01-Randstad-BackEnd-com-dotNet-2026\06-Construindo-APIs-com-dotNet-Csharp\02-Atividades\MODULOAPI\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+F:\Cursos\01-Cursos-DIO\01-Randstad-BackEnd-com-dotNet-2026\06-Construindo-APIs-com-dotNet-Csharp\02-Atividades\MODULOAPI\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
