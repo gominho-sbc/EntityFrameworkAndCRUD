@@ -254,3 +254,21 @@ record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary);
     }
 
 ```
+
+## Criando o endpoint obter por nome
+
+1. Na classe ContatoController.cs incluir o código abaixo
+```csharp
+    [HttpGet("ObterPorNome")]
+    public IActionResult ObterPorNome(string nome)
+    {
+         var contatos = _context.Contatos.Where(x => x.Nome.Contains(nome));
+         return Ok(contatos);
+    }
+
+```
+
+
+
+## Verbos Http
+![Verbos Http](image-2.png)
